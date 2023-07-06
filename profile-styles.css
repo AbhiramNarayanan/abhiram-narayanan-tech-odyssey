@@ -1,0 +1,548 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+}
+
+video#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.container {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.content {
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.profile-header {
+    padding: 10px;
+    margin: 20px auto;
+    margin-bottom: 120px;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    flex-wrap: wrap;
+    position: relative;
+     /* Add this line */
+}
+
+
+
+
+
+.profile-name {
+    font-size: 150px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    margin-bottom: 0;
+    transform-style: preserve-3d;
+    animation: nameAnimation 3s ease-in-out 2 alternate;
+    font-family:'Times New Roman', Times, serif;
+}
+
+@keyframes nameAnimation {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+}
+
+.profile-description {
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: larger;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+
+
+.video-container {
+   width: 350px;
+   height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10%;
+    object-fit: contain;
+    
+    /* Add this line to increase the gap between profile-image and profile-video */
+}
+
+
+
+
+.profile-image-and-videos{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+   
+    /* Add this line to create a gap */
+}
+
+.profile-video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%; /* Add this line to make the video cover the whole div */
+    height: 100%; /* Add this line to make the video cover the whole div */
+    object-fit: cover;
+    border-radius: 10%;
+}
+#left-video{
+    object-fit: cover;
+}
+
+.scroll-down-icon {
+    position: absolute;
+    top: 600px;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+    width: 80px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform
+   
+}
+
+.scroll-down-icon:hover {
+    transform: translateX(-50%) rotate(90deg) scale(1.1); /* Updated: added rotate(90deg) to keep the icon rotated on hover */
+}
+
+.scroll-down-icon::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #000;
+    animation: moveAnimation 1s linear infinite;
+}
+
+@keyframes scrollAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes moveAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(60px);
+    }
+}
+
+
+.contact-details {
+    margin-top: 100px;
+}
+
+.contact-link {
+    margin-bottom: 10px;
+}
+
+.contact-link a {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+.contact-link {
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s; /* Add transition for smooth effect */
+  }
+  
+  .contact-link a {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+ 
+  .contact-link:hover a {
+    color: #fff; /* Text color on hover */
+    background: linear-gradient(to right, #6f86d6, #48c6ef); /* New gradient background on hover */
+  }
+  
+  
+  
+.reach-out-heading {
+    color: #fff; /* Text color */
+    background: linear-gradient(to right, #ff5f6d, #ffc371); /* Gradient background */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+
+/* Add the appropriate icon library (e.g., Font Awesome) and styles */
+
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 120px;
+    padding: 50px;
+}
+
+.skill {
+    margin: 10px;
+    background: linear-gradient(to bottom right, #444, #111);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.skill h2 {
+    margin: 0;
+    color: #fff;
+}
+
+/* Existing styles */
+
+/* Add the following media queries */
+
+.navbar {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    margin-right: 300px; /* Added a larger gap between "My Profile" and the other contents */
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.navbar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding-bottom: 2px;
+    transition: color 0.3s;
+}
+
+.navbar-menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #0e121b, #17202d); /* Updated to a dark gradient color */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+}
+
+.navbar-menu li a:hover {
+    color: #fff;
+    background: linear-gradient(to right, #ff5f6d, #ffc371); /* Gradient background */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-menu li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Animation */
+.navbar-menu li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #17202d, #0e121b); /* Updated to a different dark gradient color */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.navbar-menu li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navbar-menu li a::after,
+.navbar-menu li a::before {
+    transition-delay: 0.1s;
+}
+
+/* Blinking effect */
+@keyframes blinkingEffect {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.navbar-menu{
+    margin-left: 400px;
+}
+
+.navbar-menu li:hover {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #FFFFFF, #FFD700);
+}
+.personal-overview {
+    background: linear-gradient(to right, #000000, #434343);
+    padding: 40px;
+    color: #ffffff;
+    border-radius: 30px;
+  }
+  
+  .overview-heading {
+    background: linear-gradient(to right, #ffcc00, #ff00cc); /* Gradient background color */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    animation: heading-animation 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes heading-animation {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+  
+  .overview-description {
+    margin-bottom: 20px;
+  }
+  .skills-heading {
+    background-image: linear-gradient(to right, #ff5f6d, #ffc371);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .skills h2 {
+    background: linear-gradient(to right, #fd5e53, #ffba52);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 3s ease infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Add different background color and image to each skill div */
+  .skills .skill:nth-child(odd) {
+    background-color: #f8f8f8;
+  }
+  
+  .skills .skill:nth-child(even) {
+    background-color: #e8e8e8;
+  }
+  .skills {
+    background-image: url("code-1076533_1920-removebg.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  .projects-heading {
+    color: #ff5f6d;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .project {
+    background: linear-gradient(135deg, white,blue);;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+    
+
+  }
+  
+  .project-heading {
+    color: red;
+    font-size: 20px;
+    margin-bottom: 10px;
+    animation: headingAnimation 2s ease-in-out infinite alternate;
+}
+
+@keyframes headingAnimation {
+    0% {
+        color: red;
+        transform: scale(1);
+    }
+    50% {
+        color: orange;
+        transform: scale(1.2);
+    }
+    100% {
+        color: red;
+        transform: scale(1);
+    }
+}
+
+  
+  .project-description {
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .project-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    
+  }
+  .project-link{
+    position: relative;
+    right: 50px;
+    
+    
+  }
+ 
+  #project-link1{
+    left: 50px;
+    
+  }
+  
+  .project-link a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    position: relative;
+    top: 150px;
+    width: 200px;
+   padding: 20px;
+   border-radius: 30px;
+   
+    background-image: linear-gradient(to right, #000000, #0066FF);
+   
+    
+  }
+ 
+  .project-link a:hover {
+    color:gold;
+    
+  }
+  
+  .project-video video {
+    border-radius: 10px;
+    width: 300px;
+    height: 450px;
+    object-fit: contain;
+  }
+  .project-video img{
+    border-radius: 10px;
+    width: 300px;
+    height: 450px;
+    object-fit: fill;
+  }
+  .project-text {
+    color: #ff5f6d; /* Text color */
+    font-size: 18px; /* Font size */
+    text-align: center; /* Text alignment */
+    margin-top: 20px; /* Top margin */
+    padding: 10px; /* Padding */
+    font-family: 'Arial', sans-serif; /* Font family */
+    animation: floatAnimation 5s ease-in-out infinite; /* Animation properties */
+  }
+  
+  @keyframes floatAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
